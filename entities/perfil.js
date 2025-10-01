@@ -1,11 +1,12 @@
 import Base from "./base.js";
 
-export default class PerfilEntity{
+export default class PerfilEntity extends Base{
     #per_id;
     #per_desc;
     #per_adm // true/false
 
     constructor(id, desc, value){
+        super();
         this.#per_id = id;
         this.#per_desc = desc;
         this.#per_adm = value;

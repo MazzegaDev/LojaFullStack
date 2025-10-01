@@ -10,23 +10,17 @@ export default class PerfilController {
   async CriarPerfil(req, res) {
     try {
       let { desc, adm } = req.body;
-      if (desc && adm) {
-        if (adm == 1 || adm == 0) {
+      if (desc && (adm === 0 || adm === 1)) {
           let novoPerfil = new PerfilEntity(0, desc, adm);
           if (await this.#pRepo.CriarPerfil(novoPerfil)) {
             return res.status(200).json({ msg: "Novo perfil criado" });
           } else {
             throw new Error("Nao foi possivel criar o perfil.");
           }
-        } else {
-          return res.status(400).json({
+      } else {
+         return res.status(400).json({
             msg: "Codigo invalido, deve ser 1 para perfil de ADM ou 0 para perfil padrao!",
           });
-        }
-      } else {
-        return res
-          .status(400)
-          .json({ msg: "O perfil contem dados invalidos!" });
       }
     } catch (error) {
       console.log(error);

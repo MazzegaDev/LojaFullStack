@@ -24,7 +24,7 @@ const doc = {
       },
       perfil: {
         desc: "ADM = per_adm 1 Usuario = per_adm 0",
-        per_adm: 1,
+        adm: 1,
       },
       vendedor: {
         email: "mazzegaloja@gmail.com",

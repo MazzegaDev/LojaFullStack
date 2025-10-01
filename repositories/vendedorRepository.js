@@ -24,7 +24,7 @@ export default class VendedorRepository {
 
   async listarVendedores() {
     const sql =
-      "select * tb_vendedor V inner join tb_perfil P on V.per_id = P.per_id where ven_ativo = 1 ";
+      "select * from tb_vendedor V inner join tb_perfil P on V.per_id = P.per_id where V.ven_ativo = 1 ";
     const rows = await this.#banco.ExecutaComando(sql);
     let vendedores = [];
     for (let i = 0; i < rows.length; i++) {
@@ -71,10 +71,10 @@ export default class VendedorRepository {
     return null;
   }
 
-  async validarADM(vendedor_email, vendedor_nome){
+  async validarADM(vendedor_id){
     const sql =
-      "select * from tb_vendedor V inner join tb_perfil P on V.per_id = P.per_id where vendedor_email = ? and vendedor_nome = ? and per_adm = 1 ";
-    const values = [vendedor_email, vendedor_nome];
+      "select * from tb_vendedor V inner join tb_perfil P on V.per_id = P.per_id where V.vendedor_id = ?";
+    const values = [vendedor_id];
     const rows = await this.#banco.ExecutaComando(sql, values);
 
     if (rows.length > 0) {
@@ -98,4 +98,5 @@ export default class VendedorRepository {
     vendedor.per_id.per_adm = row["per_adm"];
     return vendedor;
   }
+
 }

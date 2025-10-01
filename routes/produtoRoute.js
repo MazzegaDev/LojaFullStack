@@ -78,7 +78,7 @@ produtoRouter.get("/precoMaior", auth.verificarToken, (req, res) => {
     
     /*
         #swagger.responses[404] = {
-            description: "Nenhum produto para comparar o preço"
+            description: "Nenhum produto para comparar o preço",
             schema: {$ref: '#/components/schemas/erro'}
         }
     */
