@@ -78,7 +78,7 @@ O sistema conta com **camadas de permissão** para proteger funcionalidades crí
 ## 3️⃣ Instalar dependências
 -- npm install
 
-4️⃣ Iniciar o servidor
+## 4️⃣ Iniciar o servidor
 npm start
 
 
