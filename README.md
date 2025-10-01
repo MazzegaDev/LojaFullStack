@@ -69,7 +69,7 @@ O sistema conta com **camadas de permissão** para proteger funcionalidades crí
 # ▶️ Como Executar o Projeto
 
 ## 1️⃣ Clonar o repositório
-```bash
+
 -- git clone https://github.com/seu-repositorio/loja-fullstack-api.git
 
 ## 2️⃣ Acessar a pasta
