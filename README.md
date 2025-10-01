@@ -66,16 +66,16 @@ O sistema conta com **camadas de permissão** para proteger funcionalidades crí
 
 ---
 
-## ▶️ Como Executar o Projeto
+# ▶️ Como Executar o Projeto
 
-### 1️⃣ Clonar o repositório
+## 1️⃣ Clonar o repositório
 ```bash
 -- git clone https://github.com/seu-repositorio/loja-fullstack-api.git
 
-### 2️⃣ Acessar a pasta
+## 2️⃣ Acessar a pasta
 -- cd loja-fullstack-api
 
-### 3️⃣ Instalar dependências
+## 3️⃣ Instalar dependências
 -- npm install
 
 4️⃣ Iniciar o servidor
