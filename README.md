@@ -1,68 +1,86 @@
 # 🛍️ Loja FullStack - API REST
 
-A **Loja FullStack** é uma **API REST** de uma loja fictícia que oferece 
-funcionalidades completas para gerenciamento de **produtos, vendas e vendedores**, com autenticação baseada em **JWT Token**.  
+A **Loja FullStack** é uma **API REST** desenvolvida em **Node.js** e **Express**, que simula o funcionamento de uma loja fictícia.  
+O sistema permite o **gerenciamento completo de produtos, vendas e vendedores**, com **segurança via JWT** e documentação com **Swagger**.  
 
 ---
 
 ## 🚀 Funcionalidades
 
-- ✅ **Produtos**
-  - Cadastro de produtos
-  - Baixa de produtos
-  - Listagem de todos os produtos
-  - Listagem apenas dos produtos vendidos  
+### 📦 Produtos
+- Cadastro de produtos  
+- Baixa de estoque  
+- Listagem de todos os produtos  
+- Listagem apenas dos produtos vendidos  
 
-- ✅ **Vendas**
-  - Realizar uma venda
-  - Listar todas as vendas  
+### 🧾 Vendas
+- Realização de vendas  
+- Listagem de todas as vendas  
 
-- ✅ **Vendedores**
-  - Cadastro de vendedor
-  - Listagem de vendedores
-  - Desativação de vendedores  
+### 👨‍💼 Vendedores
+- Cadastro de vendedores  
+- Listagem de vendedores  
+- Desativação de vendedores  
 
-- ✅ **Segurança**
-  - Autenticação via **JWT Token**
-  - Apenas vendedores autenticados podem acessar as rotas protegidas  
+### 🔐 Segurança
+- Autenticação via **JWT Token**  
+- Middleware para validação de permissões  
+- Apenas vendedores autenticados acessam rotas protegidas  
 
-- ✅ **Banco de Dados**
-  - Transações para garantir **atomicidade** e consistência  
+### 🗄️ Banco de Dados
+- Persistência em **MySQL**  
+- Uso de **transações** para garantir atomicidade e consistência  
 
-- ✅ **Documentação**
-  - API documentada com **Swagger**
-  - Schemas organizados em **components** para facilitar envio e validação de dados  
+### 📘 Documentação
+- API documentada com **Swagger (OpenAPI 3.0)**  
+- Schemas organizados em **components** para facilitar testes e validação  
 
-- ✅ **Tratamento de Erros**
-  - Respostas padronizadas
-  - Códigos de status apropriados (`200, 400, 401, 404, 500`)  
+### ⚠️ Tratamento de Erros
+- Respostas padronizadas em JSON  
+- Códigos de status coerentes (`200, 400, 401, 403, 404, 500`)  
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
-
-- **JavaScript**  
+- **JavaScript (ES6+)**  
 - **Node.js**  
 - **Express.js**  
 - **MySQL**  
+- **JWT (JSON Web Token)**  
 - **Swagger (OpenAPI 3.0)**  
 
 ---
 
-## 🔐 Autenticação
+## 🔐 Autenticação & Permissões
 
-A API utiliza **Bearer Token (JWT)**.  
+O sistema conta com **camadas de permissão** para proteger funcionalidades críticas:
 
-# ▶️ Como Executar o Projeto
-# Clonar o repositório
-git clone https://github.com/seu-repositorio/loja-fullstack-api.git
+- **Administrador (ADM)**  
+  - Gerencia perfis e vendedores  
+  - Acesso total ao sistema  
 
-## Acessar a pasta
-cd loja-fullstack-api
+- **Vendedor**  
+  - Pode cadastrar produtos  
+  - Realizar vendas  
+  - Consultar estoque  
 
-## Instalar dependências
-npm install
+---
 
-## Iniciar o servidor
+## ▶️ Como Executar o Projeto
+
+### 1️⃣ Clonar o repositório
+```bash
+-- git clone https://github.com/seu-repositorio/loja-fullstack-api.git
+
+### 2️⃣ Acessar a pasta
+-- cd loja-fullstack-api
+
+### 3️⃣ Instalar dependências
+-- npm install
+
+4️⃣ Iniciar o servidor
 npm start
-Servidor rodará em: http://localhost:3000/
+
+
+Servidor disponível em:
+👉 http://localhost:3000/docs
