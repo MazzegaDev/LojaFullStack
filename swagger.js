@@ -22,9 +22,16 @@ const doc = {
           id: 1,
         },
       },
+      perfil: {
+        desc: "ADM = per_adm 1 Usuario = per_adm 0",
+        per_adm: 1,
+      },
       vendedor: {
         email: "mazzegaloja@gmail.com",
         nome: "Mazzega",
+        per_id: {
+          id: "0"
+        }
       },
     },
     securitySchemes: {

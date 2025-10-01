@@ -21,7 +21,14 @@ create table tb_vendedor(
 
 
 
+create table tb_perfil(
+	per_id int not null auto_increment primary key,
 
+    per_desc varchar(50) not null,
+    
+    per_adm boolean not null
+    
+);
 
 create table tb_venda(
 	venda_id int not null primary key auto_increment,

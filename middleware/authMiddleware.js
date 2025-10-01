@@ -44,5 +44,36 @@ export default class AuthMiddleware{
             return res.status(401).json({msg: "Token nao encontrado!"});
         }
     }
+
+    async verificarTokenADM(req, res, next){
+        if(req.headers.authorization){
+            let token = req.headers.authorization.split(" ")[1];
+            try {
+                let payload = jwt.verify(token, secret);
+                let vRepo = new VendedorRepository();
+                let vendedor = await vRepo.procurarVendedor(payload.id);
+                if(vendedor){
+                    if(vendedor.ven_ativo){
+                        if(vendedor.per_id.per_adm){
+                            req.VendedorLogado = vendedor.vendedor_id;
+                            next();
+                        }else{
+                            return res.status(403).json({msg: "Seu perfil nao possui permissao para essa funcionalidade!"})
+                        }
+                        
+                    }else{
+                        return res.status(401).json({msg: "Vendedor inativo"})
+                    }
+                }else{
+                    return res.status(404).json({msg: "Vendedor nao encontrado"})
+                }
+            } catch (error) {
+                console.log(error);
+                return res.status(401).json({msg: "Token invalido"})
+            }
+        }else{
+            return res.status(401).json({msg: "Token nao encontrado!"});
+        }
+    }
 }
 

@@ -5,17 +5,22 @@ export default class VendedorEntity  extends Base{
     #vendedor_nome;
     #vendedor_email;
     #ven_ativo;
+    #per_id;
 
-    constructor(vendedor_id, vendedor_nome, vendedor_email, ven_ativo){
+    constructor(vendedor_id, vendedor_nome, vendedor_email, ven_ativo, per_id){
         super();
         this.#vendedor_id = vendedor_id;
         this.#vendedor_nome = vendedor_nome;
         this.#vendedor_email = vendedor_email;
         this.#ven_ativo = ven_ativo;
+        this.#per_id = per_id;
     
     }
 
     //getter
+    get per_id(){
+        return this.#per_id;
+    }
     get vendedor_id(){
         return this.#vendedor_id;
     }
@@ -29,6 +34,9 @@ export default class VendedorEntity  extends Base{
         return this.#ven_ativo;
     }
     //setter
+    set per_id(id){
+        this.#per_id = id;
+    }
     set vendedor_id(id){
         this.#vendedor_id = id;
     }

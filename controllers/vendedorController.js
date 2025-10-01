@@ -1,22 +1,31 @@
 import VendedorEntity from "../entities/vendedor.js";
+import PerfilEntity from "../entities/perfil.js";
 import VendedorRepository from "../repositories/vendedorRepository.js";
+import PerfilRepository from "../repositories/perfilRepository.js";
 
 export default class VendedorController {
   #vRepo;
+  #pRepo;
   constructor() {
     this.#vRepo = new VendedorRepository();
+    this.#pRepo = new PerfilRepository();
   }
 
   async cadastrarVendedor(req, res) {
     try {
-      let { nome, email } = req.body;
-      if (nome && email) {
-        let novoVendedor = new VendedorEntity(0, nome, email, true);
-        if (await this.#vRepo.cadastrarVendedor(novoVendedor)) {
+      let { nome, email, per_id } = req.body;
+      if (nome && email && per_id && per_id.id) {
+        if(await this.#pRepo.PerfilId(per_id.id)){
+          let novoVendedor = new VendedorEntity(0, nome, email, true, new PerfilEntity(per_id.id));
+          if (await this.#vRepo.cadastrarVendedor(novoVendedor)) {
           return res.status(200).json({ msg: "Novo vendedor cadastrado" });
         } else {
           throw new Error("Nao foi possivel cadastrar o vendedor");
         }
+        }else{
+          return res.status(404).json({msg: "Esse ID nao pertence a nenhum perfil."});
+        }
+        
       } else {
         return res
           .status(400)
