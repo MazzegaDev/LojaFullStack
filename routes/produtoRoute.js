@@ -55,22 +55,40 @@ produtoRouter.get("/", auth.verificarToken, (req, res) => {
 produtoRouter.get("/produtosVendidos", auth.verificarToken, (req, res) => {
   // #swagger.tags = ['Produto']
   // #swagger.summary = 'Lista os produtos que foram vendidos'
-
-  /*
+    /*
         #swagger.responses[404] = {
             description: "Nenhum produto para listar",
             schema: {$ref: '#/components/schemas/erro'}
         }
-    */
+    * /
 
 
 
-        /*
+    /*
         #swagger.security = [{
             "bearerAuth": []
         }]
     */
   ctrl.listarProdutosVendidos(req, res);
 });
+
+produtoRouter.get("/precoMaior", auth.verificarToken, (req, res) => {
+    // #swagger.tags = ['Produto']
+    // #swagger.summary = 'Lista primeiro os produtos de maior preço'
+    
+    /*
+        #swagger.responses[404] = {
+            description: "Nenhum produto para comparar o preço"
+            schema: {$ref: '#/components/schemas/erro'}
+        }
+    */
+
+    /* 
+        #swagger.security = [{
+            "bearerAuth": []
+        }]
+    */
+    ctrl.listarProdutosVendidos(req, res);
+})
 
 export default produtoRouter;

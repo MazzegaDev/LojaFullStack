@@ -83,6 +83,18 @@ export default class ProdutosRepository {
     return null;
   }
 
+  async PrecoMaior(){
+    const sql = "select * from tb_produtos order by prod_preco desc";
+    const rows = await this.#banco.ExecutaComando(sql);
+    let produtos = [];
+
+    for (let i = 0; i < rows.length; i++) {
+      const row = rows[i];
+      produtos.push(this.toMap(row));
+    }
+    return produtos;
+  }
+
   toMap(row) {
     let produto = new ProdutosEntity();
     produto.prod_id = row["prod_id"];

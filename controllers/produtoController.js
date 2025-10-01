@@ -57,5 +57,19 @@ export default class ProdutosController {
         .json({ msg: "Nao foi possivel processar a requisicao." });
     }
   }
+
+  async listarPrecoMaior(req, res){
+    try {
+      let lista = await this.#pRepo.PrecoMaior();
+      if(lista.length > 0){
+        return res.status(200).json(lista);
+      }else{
+        return res.status(404).json({msg: "Nenhum produto para comparar o preço."});
+      }
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({msg: "Nao foi possivel processar a requisicao"})
+    }
+  }
   
 }
