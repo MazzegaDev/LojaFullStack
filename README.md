@@ -53,16 +53,16 @@ funcionalidades completas para gerenciamento de **produtos, vendas e vendedores*
 
 A API utiliza **Bearer Token (JWT)**.  
 
-▶️ Como Executar o Projeto
+# ▶️ Como Executar o Projeto
 # Clonar o repositório
 git clone https://github.com/seu-repositorio/loja-fullstack-api.git
 
-# Acessar a pasta
+## Acessar a pasta
 cd loja-fullstack-api
 
-# Instalar dependências
+## Instalar dependências
 npm install
 
-# Iniciar o servidor
+## Iniciar o servidor
 npm start
 Servidor rodará em: http://localhost:3000/
