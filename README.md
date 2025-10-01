@@ -63,12 +63,6 @@ cd loja-fullstack-api
 # Instalar dependências
 npm install
 
-# Configurar variáveis de ambiente (banco, JWT secret etc.)
-cp .env.example .env
-
-# Rodar migrações no MySQL
-npm run migrate
-
 # Iniciar o servidor
 npm start
 Servidor rodará em: http://localhost:3000/
