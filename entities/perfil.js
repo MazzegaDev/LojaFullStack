@@ -3,7 +3,7 @@ import Base from "./base.js";
 export default class PerfilEntity extends Base{
     #per_id;
     #per_desc;
-    #per_adm // true/false
+    #per_adm; // true/false
 
     constructor(id, desc, value){
         super();

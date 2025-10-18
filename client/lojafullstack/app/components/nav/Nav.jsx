@@ -1,20 +1,11 @@
 import "./styleN.css";
-import Link from "next/link";
+import LinkList from "../linkList/LinkList";
+
 
 export default function Nav() {
     return (
         <nav className="navBar">
-            <ul className="listaLinks">
-                <li>
-                    <Link href={""} className="links">teste</Link>
-                </li>
-                <li>
-                    <Link href={""} className="links">teste</Link>
-                </li>
-                <li>
-                    <Link href={""} className="links">teste</Link>
-                </li>
-            </ul>
+            <LinkList></LinkList>
         </nav>
     );
 }

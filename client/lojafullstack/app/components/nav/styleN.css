@@ -5,23 +5,6 @@ body{
 
 .navBar{
     padding: 1;
-    background-color: bisque;
+    background-color:  #4765d3;
 }
 
-.listaLinks{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    list-style-type: none;
-}
-.links{
-    border-radius: 25px;
-    padding: 0.2rem;
-    background-color: black;
-    color: white;
-    text-decoration: none;
-}
-
-.links:hover{
-    background-color: rgb(53, 52, 52);
-}
